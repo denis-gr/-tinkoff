@@ -6,7 +6,7 @@
 
 `git clone https://github.com/denis-gr/-tinkoff.git`
 
-`cd -tinkoff`
+`cd ./-tinkoff`
 
 `git clone https://github.com/denis-gr/tinkoff-bot.git`
 
