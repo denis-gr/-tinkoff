@@ -1,5 +1,7 @@
 # Tinkoff
 
+**Please give me feedback**, you can do this by creating a Pull Request that adds text in Russian or English to the file `You_feedback.txt`
+
 ## Firtly, build
 
 `git clone https://github.com/denis-gr/-tinkoff.git`
