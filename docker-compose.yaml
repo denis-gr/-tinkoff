@@ -15,7 +15,7 @@ services:
   modelserver:
     build: tinkoff-model-server
     ports:
-      - "8500:80"
+      - "8500:8500"
     deploy:
       resources:
         reservations:
