@@ -1,4 +1,4 @@
-# -tinkoff
+# Tinkoff
 
 ## Firtly, build
 
