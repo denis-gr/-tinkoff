@@ -8,7 +8,7 @@ services:
       - modelserver
       - mongo
     environment:
-      - BOT_TELETGRAM_TOKEN=6490838901:AAHe8b50IA2RHM2SUj81OAhnaHLXLGiGDeA
+      - BOT_TELETGRAM_TOKEN=value
       - BOT_MONGODB_URL=mongodb://localhost:27017
       - BOT_MONGODB_NAME=BOT
       - BOT_MODEL_SERVER_URL=http://localhost:80/
