@@ -13,7 +13,7 @@ services:
       - BOT_MONGODB_NAME=BOT
       - BOT_MODEL_SERVER_URL=http://localhost:8055/
     ports:
-      - "80:80"
+      - "8055:8055"
       - "27017:27017"
     network_mode: host
   modelserver:
