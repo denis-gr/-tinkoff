@@ -11,15 +11,15 @@ services:
       - BOT_TELETGRAM_TOKEN=value
       - MODEL_DEVICE=mongodb://localhost:27017
       - BOT_MONGODB_NAME=BOT
-      - BOT_MODEL_SERVER_URL=http://localhost:8055/
+      - BOT_MODEL_SERVER_URL=http://localhost:80/
     ports:
-      - "8055:8055"
+      - "80:80"
       - "27017:27017"
     network_mode: host
   modelserver:
     build: tinkoff-model-server
     ports:
-      - "8055:8055"
+      - "80:80"
     deploy:
       resources:
         reservations:
