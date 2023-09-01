@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  bot:
+    restart: always
+    build: tinkoff-bot
+    depends_on:
+      - modelserver
+      - mongo
+    environment:
+      - BOT_TELETGRAM_TOKEN=TOKEN
+      - BOT_MONGODB_URL=mongodb://localhost:27017
+      - BOT_MONGODB_NAME=BOT
+      - BOT_MODEL_SERVER_URL=http://localhost:8500/
+    networks:
+      - db-network
+      - model-network
+  modelserver:
+    build: tinkoff-model-server
+    ports:
+      - "8500:80"
+    networks:
+      - model-network
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo:/data/db
+    networks:
+      - db-network
+volumes:
+  mongo:
+networks:
+  db-network:
+    driver: bridge
+  model-network:
+    driver: bridge
