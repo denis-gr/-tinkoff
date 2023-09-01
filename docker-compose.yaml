@@ -8,10 +8,10 @@ services:
       - modelserver
       - mongo
     environment:
-      - BOT_TELETGRAM_TOKEN=value
-      - BOT_MONGODB_URL=mongodb://localhost:27017
+      - BOT_TELETGRAM_TOKEN=denisgr04/guap
+      - MODEL_DEVICE=mongodb://localhost:27017
       - BOT_MONGODB_NAME=BOT
-      - BOT_MODEL_SERVER_URL=http://localhost:80/
+      - BOT_MODEL_SERVER_URL=http://localhost:8055/
     ports:
       - "80:80"
       - "27017:27017"
@@ -19,13 +19,18 @@ services:
   modelserver:
     build: tinkoff-model-server
     ports:
-      - "80:80"
+      - "8055:8055"
     deploy:
       resources:
         reservations:
           devices:
             - driver: nvidia
               capabilities: [gpu]
+    environment:
+      - MODEL_MODEL_NAME=
+      - MODEL_DEVICE=auto
+      - MODEL_CONTEXT_WINDOW=2048
+      - MODEL_MAX_NEW_TOKEN=256
   mongo:
     image: mongo
     ports:
