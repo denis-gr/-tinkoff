@@ -27,7 +27,7 @@ services:
             - driver: nvidia
               capabilities: [gpu]
     environment:
-      - MODEL_MODEL_NAME=
+      - MODEL_MODEL_NAME=denisgr04/guap
       - MODEL_DEVICE=auto
       - MODEL_CONTEXT_WINDOW=2048
       - MODEL_MAX_NEW_TOKEN=256
